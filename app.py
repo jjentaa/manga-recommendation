@@ -39,6 +39,12 @@ if(query):
 fb = st.text_input('Enter Feedback :')
 
 if(fb):
-    feedback+=fb+'\n'
+    with open('data/feedback.txt', 'w', encoding='utf-8') as f:
+        f.write(fb+'\n')
+        f.close()
 
-st.download_button('Download Feedback', feedback)
+ffb = open('data/feedback.txt')
+
+st.download_button('Download Feedback', ffb)
+
+ffb.close()
