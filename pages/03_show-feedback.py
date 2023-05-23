@@ -1,0 +1,12 @@
+import streamlit as st 
+import pandas as pd 
+
+st.title("Show feedback")
+
+password = st.text_input("Enter a password", type="password")
+
+if(password=='thepasswordispassword'):
+    datafb = pd.read_csv("feedback.csv")
+    st.dataframe(datafb)
+
+st.image('https://cdn.anime-planet.com/manga/primary/solo-leveling-1-190x273.jpg?t=1625919488')
