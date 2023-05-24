@@ -1,3 +1,2 @@
-python pip freeze
 torch==2.0.1
 bing-image-urls==0.1.5
