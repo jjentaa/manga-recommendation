@@ -1,10 +1,10 @@
 import streamlit as st 
-from sklearn.model_selection import train_test_split
+#from sklearn.model_selection import train_test_split
 import numpy as np
 import pandas as pd
 import torch
-import matplotlib.pyplot as plt
-from imageio import imread
+#import matplotlib.pyplot as plt
+#from imageio import imread
 from sentence_transformers import SentenceTransformer, util
 
 
