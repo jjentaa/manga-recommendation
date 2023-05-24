@@ -1,11 +1,9 @@
 import streamlit as st 
-#from sklearn.model_selection import train_test_split
 import numpy as np
 import pandas as pd
 import torch
-#import matplotlib.pyplot as plt
-#from imageio import imread
 from sentence_transformers import SentenceTransformer, util
+from bing_image_urls import bing_image_urls
 
 
 st.set_page_config(page_title="Manga Recommendation",page_icon="📚")
@@ -22,6 +20,13 @@ query = st.text_input('Enter query : ex. What manga has a character who is smoot
 
 if(query):
     print(query)
+    f = open('counter.txt','r+')
+    oldscore = (f.read())
+    oldscore = int(oldscore)
+    score = oldscore + 1
+    f.seek(0)
+    f.write(str(score))
+    f.close()
     query_en = model.encode(query, convert_to_tensor=True)
     cosine_scores = util.cos_sim(query_en, embeddings_des)
 
@@ -29,9 +34,11 @@ if(query):
     print(all_idx)
     st.write("We recommend : ")
     for i in range(len(all_idx)):
-        print(i+1, df.loc[all_index[all_idx[int(i)]], "title"])
-        st.write(f'{i+1}. {df.loc[all_index[all_idx[int(i)]], "title"]}')
-        img_url = df.loc[int(i), "cover"]
+        title = df.loc[all_index[all_idx[int(i)]], "title"]
+        print(i+1, title)
+        st.write(f'{i+1}. {title}')
+        url = bing_image_urls(title, limit=1)[0]
+        print(url)
 
         # show cover
-        st.image(img_url)
+        st.image(url, width=100)
