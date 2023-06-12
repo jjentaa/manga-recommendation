@@ -12,9 +12,14 @@ st.title("Manga Recommendation ver.Mutilingual model")
 all_title = np.load("all_title.npy")
 all_index = np.load("all_index.npy")
 
-path = 'Madnesss/fine-tune-paraphrase-multilingual-mpnet-base-v2'
-model = SentenceTransformer(path)
+@st.cache_resource 
+def load_model():
+    path = 'Madnesss/fine-tune-paraphrase-multilingual-mpnet-base-v2'
+    return SentenceTransformer(path)
+
+model = load_model()
 embeddings_des = torch.load("embeddings_des_multi.pt", map_location=torch.device('cpu'))
+
 
 query = st.text_input('Enter query :')
 
