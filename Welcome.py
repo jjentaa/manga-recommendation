@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit_modal import Modal
 
 st.set_page_config(page_title="Manga Recommendation",page_icon="📚")
 st.title("Manga Recommendation 📚")
