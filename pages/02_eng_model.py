@@ -12,8 +12,12 @@ st.title("Manga Recommendation ver.Eng model")
 all_title = np.load("all_title.npy")
 all_index = np.load("all_index.npy")
 
-path = 'Madnesss/fine-tune-all-MiniLM-L6-v2'
-model = SentenceTransformer(path)
+@st.cache_resource 
+def load_model():
+    path = 'Madnesss/fine-tune-all-MiniLM-L6-v2'
+    return SentenceTransformer(path)
+
+model = load_model()
 embeddings_des = torch.load("embeddings_des.pt", map_location=torch.device('cpu'))
 
 query = st.text_input('Enter query :')
