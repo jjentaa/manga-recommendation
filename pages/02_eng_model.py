@@ -64,14 +64,20 @@ if(query):
 
     all_idx = torch.topk(cosine_scores.flatten(), 5).indices
     print(all_idx)
+    # scores = []
+    # for j in all_idx:
+    #     scores.append(cosine_scores[0][j])
+    
     st.write("We recommend : ")
     for i in range(len(all_idx)):
         title = all_title[all_idx[i]]
-        each_score = float(cosine_scores[0][i])*100
         print(i+1, title)
+        score_each = cosine_scores[0][all_idx[i]]*100
+        print("score:", cosine_scores[0][all_idx[i]])
         st.write(f'{i+1}. {title}')
+        st.write(f'{round(float(score_each), 2)}% match')
         keyword = title+" manga"
-        url = bing_image_urls(keyword, limit=1)[0]
+        url = bing_image_urls(keyword, limit=2)[1]
         print(url)
 
         # show cover
