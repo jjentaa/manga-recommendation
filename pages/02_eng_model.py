@@ -4,8 +4,6 @@ import pandas as pd
 import torch
 from sentence_transformers import SentenceTransformer, util
 from bing_image_urls import bing_image_urls
-from streamlit_modal import Modal
-import streamlit.components.v1 as components
 
 #title
 st.title("Manga Recommendation ver.Eng model")
