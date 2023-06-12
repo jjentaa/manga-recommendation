@@ -21,7 +21,7 @@ model = load_model()
 embeddings_des = torch.load("embeddings_des_multi.pt", map_location=torch.device('cpu'))
 
 
-query = st.text_input('Enter query :')
+query1 = st.text_input('Enter query :')
 
 col1, col2, col3 = st.columns(3)
 with col1:
@@ -41,17 +41,17 @@ query 2 : 농구 신동
 query 3 : ปวดตับ''')
 
 if(col1):
-    query = "นักสืบตายแล้ว"
+    query1 = "นักสืบตายแล้ว"
 
 if(col2):
-    query = "농구 신동"
+    query1 = "농구 신동"
 
 if(col3):
-    query = "ปวดตับ"
+    query1 = "ปวดตับ"
 
 
-if(query):
-    print(query)
+if(query1):
+    print(query1)
 
     f = open('counter.txt','r+')
     oldscore = (f.read())
@@ -60,7 +60,7 @@ if(query):
     f.seek(0)
     f.write(str(score))
     f.close()
-    query_en = model.encode(query, convert_to_tensor=True)
+    query_en = model.encode(query1, convert_to_tensor=True)
     cosine_scores = util.cos_sim(query_en, embeddings_des)
 
     all_idx = torch.topk(cosine_scores.flatten(), 5).indices
@@ -68,11 +68,13 @@ if(query):
     st.write("We recommend : ")
     for i in range(len(all_idx)):
         title = all_title[all_idx[i]]
-        each_score = float(cosine_scores[0][i])*100
         print(i+1, title)
+        score_each = cosine_scores[0][all_idx[i]]*100
+        print("score:", cosine_scores[0][all_idx[i]])
         st.write(f'{i+1}. {title}')
+        st.write(f'{round(float(score_each), 2)}% match')
         keyword = title+" manga"
-        url = bing_image_urls(keyword, limit=1)[0]
+        url = bing_image_urls(keyword, limit=2)[0]
         print(url)
 
         # show cover
