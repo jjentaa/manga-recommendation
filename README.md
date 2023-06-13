@@ -7,9 +7,9 @@ First, you have to pip install the necessary library.
 !pip install sentence-transformers==2.2.2
 ```
 
-or you can create `requirements.txt` and in this file put :
+or you can create `requirements.txt` and use this command.
 ```
-sentence-transformers==2.2.2
+pip install -r requirements.txt
 ```
 
 ## Finetune
@@ -46,6 +46,12 @@ cosine_scores = util.cos_sim(embeddings1, embeddings2)
 
 #Output the scores
 print(cosine_scores) #tensor([0.1, 0,2, 0.3, ....])
+```
+
+## Deployment
+Just clone my respository and use this command in terminal.
+```
+streamlit run Welcome.py
 ```
 
 ## Blog
