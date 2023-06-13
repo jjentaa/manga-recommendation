@@ -5,9 +5,13 @@ It is a recommendation model for recommend mangas by using query(user requiremen
 First, you have to pip install the necessary library.
 ```
 !pip install sentence-transformers==2.2.2
+!pip install torch==2.0.1
+!pip install bing-image-urls==0.1.5
 ```
 
-or you can create `requirements.txt` and use this command.
+or you can create `requirements.txt` and copy my `requirements.txt` in your file.\
+\
+Then run this command in terminal or command prompt.
 ```
 pip install -r requirements.txt
 ```
@@ -53,6 +57,7 @@ Just clone my respository and use this command in terminal.
 ```
 streamlit run Welcome.py
 ```
+It will open in your browser.
 
 ## Blog
 I have written a blog for giving more details. You can find out [here](https://medium.com/@madness_/manga-recommendation-️-a8147d933c51).
