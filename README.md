@@ -27,8 +27,8 @@ The second script used `"paraphrase-multilingual-mpnet-base-v2"` for being a pre
 
 ## Usage
 There are 2 finetuned models for encode the word to vector.
-1. Madnesss/fine-tune-all-MiniLM-L6-v2 : It is for English only.
-2. Madnesss/fine-tune-paraphrase-multilingual-mpnet-base-v2 : It is multilingual model.
+1. [Madnesss/fine-tune-all-MiniLM-L6-v2](https://huggingface.co/Madnesss/fine-tune-all-MiniLM-L6-v2) : It is for English only.
+2. [Madnesss/fine-tune-paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/Madnesss/fine-tune-paraphrase-multilingual-mpnet-base-v2) : It is multilingual model.
 
 ### Finding cosine similarity score
 ```
