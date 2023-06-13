@@ -1,6 +1,6 @@
 # Manga-recommendation
-It is a recommendation model for recommend mangas by using query(user requirement).\
-
+It is a recommendation model for recommend mangas by using query(user requirement).
+\
 ## Get start
 First, you have to pip install the necessary library.
 ```
