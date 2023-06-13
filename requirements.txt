@@ -1,5 +1,3 @@
 torch==2.0.1
 bing-image-urls==0.1.5
 sentence-transformers==2.2.2
-numpy==1.21.6
-streamlit==1.10.0
