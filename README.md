@@ -19,7 +19,7 @@ pip install -r requirements.txt
 ```
 
 ## Finetune
-I just generate query by using [Alpaca-LoRA](https://colab.research.google.com/drive/1eWAmesrW99p7e1nah5bipn0zikMb8XYC?usp=sharing). and finetune it.
+I just generate query by using [Alpaca-LoRA](https://colab.research.google.com/drive/1eWAmesrW99p7e1nah5bipn0zikMb8XYC?usp=sharing) and finetune it.
 
 This is a code for generate querys. 
 
