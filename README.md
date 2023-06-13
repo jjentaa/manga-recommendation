@@ -7,6 +7,8 @@ First, you have to pip install the necessary library.
 !pip install sentence-transformers==2.2.2
 !pip install torch==2.0.1
 !pip install bing-image-urls==0.1.5
+!pip install streamlit==1.10.0
+!pip install numpy==1.21.6
 ```
 
 or you can create `requirements.txt` and copy my `requirements.txt` in your file.\
